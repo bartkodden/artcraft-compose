@@ -1,0 +1,99 @@
+services:
+
+  photocraft:
+    restart: unless-stopped
+    image: storytold-photocraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: photocraft
+        APP_NAME: photocraft-web
+    ports:
+      - "127.0.0.1:8801:80"
+
+  vectorcraft:
+    restart: unless-stopped
+    image: storytold-vectorcraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: vectorcraft
+        APP_NAME: vectorcraft-web
+    ports:
+      - "127.0.0.1:8802:80"
+
+  lightcraft:
+    restart: unless-stopped
+    image: storytold-lightcraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: lightcraft
+        APP_NAME: lightcraft-web
+        USE_XTASK: "true"
+        DIST_DIR: /src/target/web
+        EXTRA_STATIC: worker.js
+    ports:
+      - "127.0.0.1:8803:80"
+
+  printcraft:
+    restart: unless-stopped
+    image: storytold-printcraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: printcraft
+        APP_NAME: pdfcraft-web
+    ports:
+      - "127.0.0.1:8804:80"
+
+  effectcraft:
+    restart: unless-stopped
+    image: storytold-effectcraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: effectcraft
+        APP_NAME: effectcraft-web
+        USE_XTASK: "true"
+        DIST_DIR: /src/target/web/dist
+    ports:
+      - "127.0.0.1:8805:80"
+      
+  filmcraft:
+    restart: unless-stopped
+    image: storytold-filmcraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: filmcraft
+        APP_NAME: filmcraft-web
+        USE_XTASK: "true"
+        DIST_DIR: /src/target/web/dist
+    ports:
+      - "127.0.0.1:8807:80"
+
+  designcraft:
+    restart: unless-stopped
+    image: storytold-designcraft:latest
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+      args:
+        REPO_NAME: designcraft
+        APP_NAME: designcraft-web
+    ports:
+      - "127.0.0.1:8806:80"
