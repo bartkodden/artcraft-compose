@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArtCraft — Creative Suite</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f0f11;
+      --surface:   #1a1a1f;
+      --border:    #2a2a32;
+      --text:      #e8e8ec;
+      --muted:     #888896;
+      --accent:    #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+    }
+
+    header p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--app-color) 0%, transparent 60%);
+      opacity: 0.06;
+      transition: opacity 0.15s;
+    }
+
+    .card:hover {
+      border-color: var(--app-color);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .card:hover::before {
+      opacity: 0.12;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .card-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--app-color);
+    }
+
+    .card-tagline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-arrow {
+      align-self: flex-end;
+      font-size: 1.1rem;
+      color: var(--app-color);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    footer {
+      margin-top: 80px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ArtCraft</h1>
+    <p>Open-source creative tools — self-hosted, private, yours</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="https://photocraft.{$d2}" style="--app-color:#4f8ef7">
+      <div class="card-icon">�️</div>
+      <div class="card-tagline">Image editor</div>
+      <div class="card-name">PhotoCraft</div>
+      <div class="card-desc">Layers, masks, adjustment layers, type, vectors, brushes and real PSD files. A Photoshop-compatible image editor in pure Rust.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="https://vectorcraft.{$d2}" style="--app-color:#e8573f">
+      <div class="card-icon">✏️</div>
+      <div class="card-tagline">Vector illustration</div>
+      <div class="card-name">VectorCraft</div>
+      <div class="card-desc">Pen tool, Pathfinder, gradients, live blends, envelope distort, SVG and PDF — an Illustrator-compatible vector editor.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="https://filmcraft.{$d2}" style="--app-color:#6a3fd6">
+      <div class="card-icon">�</div>
+      <div class="card-tagline">Video editor</div>
+      <div class="card-name">FilmCraft</div>
+      <div class="card-desc">Multi-track timeline, Lumetri colour, 90+ effects, our own H.264/HEVC/ProRes codecs. A Premiere Pro-compatible NLE.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="https://lightcraft.{$d2}" style="--app-color:#f2a51a">
+      <div class="card-icon">�</div>
+      <div class="card-tagline">Photo library & RAW</div>
+      <div class="card-name">LightCraft</div>
+      <div class="card-desc">Non-destructive RAW development, masking, presets, a full photo library and colour science — a Lightroom-compatible darkroom.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="https://printcraft.{$d2}" style="--app-color:#12a58a">
+      <div class="card-icon">�</div>
+      <div class="card-tagline">PDF workbench</div>
+      <div class="card-name">PrintCraft</div>
+      <div class="card-desc">Read, annotate, combine, split, sign and protect PDFs. A clean-room Acrobat-compatible PDF tool written from the ISO spec.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="https://effectcraft.{$d2}" style="--app-color:#e03068">
+      <div class="card-icon">✨</div>
+      <div class="card-tagline">Motion graphics & VFX</div>
+      <div class="card-name">EffectCraft</div>
+      <div class="card-desc">Compositions, keyframes, 306 effects, 3D cameras, expressions, Lottie export. An After Effects-compatible compositor.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="https://designcraft.{$d2}" style="--app-color:#7bb51c">
+      <div class="card-icon">�</div>
+      <div class="card-tagline">Page layout</div>
+      <div class="card-name">DesignCraft</div>
+      <div class="card-desc">Threaded stories, paragraph styles, Knuth–Plass composition, IDML, PDF export. An InDesign-compatible layout tool.</div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+
+  <footer>
+    Self-hosted with ❤️ · <a href="https://github.com/storytold" target="_blank">storytold on GitHub</a> · <a href="https://getartcraft.com" target="_blank">getartcraft.com</a>
+  </footer>
+
+</body>
+</html>

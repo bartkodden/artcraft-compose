@@ -97,3 +97,13 @@ services:
         APP_NAME: designcraft-web
     ports:
       - "127.0.0.1:8806:80"
+      
+  launcher:
+    restart: unless-stopped
+    image: storytold-launcher:latest
+    pull_policy: never
+    build:
+      context: ./launcher
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8800:80"
