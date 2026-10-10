@@ -107,7 +107,7 @@ this line to your main `Caddyfile`:
 import /etc/caddy/storytold.caddyfile
 ```
 
-Replace `{$d2}` with your domain or set it as an environment variable.
+Replace `{$domain}` with your domain or set it as an environment variable.
 
 ### 4 — Start the stack
 
