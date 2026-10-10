@@ -1,0 +1,50 @@
+(craftapp) {
+    header {
+        Cross-Origin-Opener-Policy   "same-origin"
+        Cross-Origin-Embedder-Policy "require-corp"
+        Cross-Origin-Resource-Policy "same-origin"
+        X-Content-Type-Options       "nosniff"
+    }
+
+    @wasm path *.wasm
+    header @wasm Content-Type "application/wasm"
+}
+
+craft.{$domain} {
+    reverse_proxy localhost:8800
+}
+
+photocraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8801
+}
+
+vectorcraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8802
+}
+
+lightcraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8803
+}
+
+printcraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8804
+}
+
+effectcraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8805
+}
+
+designcraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8806
+}
+
+filmcraft.{$domain} {
+    import craftapp
+    reverse_proxy localhost:8807
+}
