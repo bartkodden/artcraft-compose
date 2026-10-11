@@ -1,0 +1,7 @@
+# no secrets
+.env
+*.env
+
+# no build output on the host
+dist/
+target/

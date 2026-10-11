@@ -105,5 +105,7 @@ services:
     build:
       context: ./launcher
       dockerfile: Dockerfile
+    environment:
+      - DOMAIN=${DOMAIN}
     ports:
       - "127.0.0.1:8800:80"
