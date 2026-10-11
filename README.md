@@ -40,15 +40,15 @@ sent to any server — these are pure client-side WASM applications.
 
 All credit goes to the original authors:
 
-| App | Repository | What it reimplements |
-|-----|-----------|----------------------|
-| PhotoCraft | [storytold/photocraft](https://github.com/storytold/photocraft) | Adobe Photoshop |
-| VectorCraft | [storytold/vectorcraft](https://github.com/storytold/vectorcraft) | Adobe Illustrator |
-| FilmCraft | [storytold/filmcraft](https://github.com/storytold/filmcraft) | Adobe Premiere Pro |
-| LightCraft | [storytold/lightcraft](https://github.com/storytold/lightcraft) | Adobe Lightroom |
-| PrintCraft | [storytold/printcraft](https://github.com/storytold/printcraft) | Adobe Acrobat |
-| EffectCraft | [storytold/effectcraft](https://github.com/storytold/effectcraft) | Adobe After Effects |
-| DesignCraft | [storytold/designcraft](https://github.com/storytold/designcraft) | Adobe InDesign |
+| App | Repository |
+|-----|-----------|
+| PhotoCraft | [storytold/photocraft](https://github.com/storytold/photocraft) |
+| VectorCraft | [storytold/vectorcraft](https://github.com/storytold/vectorcraft) |
+| FilmCraft | [storytold/filmcraft](https://github.com/storytold/filmcraft) |
+| LightCraft | [storytold/lightcraft](https://github.com/storytold/lightcraft) |
+| PrintCraft | [storytold/printcraft](https://github.com/storytold/printcraft) |
+| EffectCraft | [storytold/effectcraft](https://github.com/storytold/effectcraft) |
+| DesignCraft | [storytold/designcraft](https://github.com/storytold/designcraft) |
 
 ---
 
