@@ -1,6 +1,6 @@
 #!/bin/bash
 LOG=/var/log/artcraft-update.log
-SCRIPT=/var/docker/storytold/update.sh
+SCRIPT=./update.sh
 
 echo "Starting ArtCraft update in background..."
 echo "Follow progress with: tail -f $LOG"
